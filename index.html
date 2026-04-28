@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>이동근 ♥ 권영서 청첩장</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+KR:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #F9F9F7;
+      --white:      #FFFFFF;
+      --dark:       #1A1A1E;
+      --gray:       #8E8E93;
+      --light:      #E5E5EA;
+      --line:       #EFEFEB;
+      --gold:       #B8966A;
+      --gold-l:     #E8D5B5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      max-width: 430px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+
+    /* ══ HERO ══ */
+    .hero {
+      background: var(--white);
+    }
+
+    .hero-date-top {
+      padding: 44px 28px 26px;
+      text-align: center;
+    }
+
+    .hero-date-nums {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--dark);
+    }
+
+    .hero-date-nums .pipe {
+      color: var(--light);
+      margin: 0 12px;
+      font-weight: 300;
+    }
+
+    .hero-day {
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 9px;
+    }
+
+    .hero-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-bottom {
+      padding: 34px 28px 44px;
+      text-align: center;
+    }
+
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 27px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--dark);
+    }
+
+    .hero-names .pipe {
+      color: var(--light);
+      margin: 0 16px;
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.9;
+      margin-top: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ══ TAGS & RULES ══ */
+    .tag {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    .h-rule {
+      width: 1px;
+      height: 44px;
+      background: var(--light);
+      margin: 0 auto;
+    }
+
+    /* ══ GREETING ══ */
+    .greeting {
+      background: var(--white);
+      padding: 64px 40px;
+      text-align: center;
+    }
+
+    .greeting .tag { margin-bottom: 30px; }
+
+    .greeting-text {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 2.4;
+      color: #5a5a5a;
+      word-break: keep-all;
+    }
+
+    /* ══ FAMILY ══ */
+    .family {
+      background: var(--bg);
+      padding: 60px 28px;
+    }
+
+    .family .tag { margin-bottom: 32px; }
+
+    .family-inner {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0 20px;
+      align-items: center;
+    }
+
+    .fam-vline {
+      background: var(--light);
+      height: 60px;
+      align-self: center;
+    }
+
+    .fam-side { text-align: center; }
+
+    .fam-parents {
+      font-size: 11.5px;
+      color: var(--gray);
+      line-height: 1.9;
+      margin-bottom: 7px;
+    }
+
+    .fam-role {
+      font-size: 9.5px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .fam-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+      font-weight: 400;
+      color: var(--dark);
+      letter-spacing: 0.06em;
+    }
+
+    /* ══ DATE ══ */
+    .date-section {
+      background: var(--white);
+      padding: 68px 28px;
+      text-align: center;
+    }
+
+    .date-section .tag {
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .date-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 300;
+      color: var(--dark);
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+
+    .date-sub {
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.14em;
+      margin-top: 12px;
+      margin-bottom: 40px;
+    }
+
+    /* calendar */
+    .cal-wrap {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 20px;
+    }
+
+    .cal-month {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--gray);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .cal-dow {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 9.5px;
+      color: var(--light);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .cal-dow span:first-child { color: rgba(200,60,60,0.65); }
+    .cal-dow span:last-child  { color: rgba(60,80,200,0.65); }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      text-align: center;
+    }
+
+    .cal-grid .d {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--dark);
+      border-radius: 50%;
+    }
+
+    .cal-grid .d.e  { color: transparent; }
+    .cal-grid .d.su { color: rgba(200,60,60,0.7); }
+    .cal-grid .d.sa { color: rgba(60,80,200,0.7); }
+    .cal-grid .d.w  {
+      background: var(--gold);
+      color: var(--white) !important;
+      font-weight: 500;
+    }
+
+    /* countdown */
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .cd-item {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 6px;
+      text-align: center;
+    }
+
+    .cd-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .cd-unit {
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      margin-top: 5px;
+    }
+
+    /* ══ GALLERY ══ */
+    .gallery-section {
+      background: var(--bg);
+      padding: 68px 0;
+    }
+
+    .gallery-header {
+      padding: 0 28px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .gallery-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 0 28px 6px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .gallery-scroll::-webkit-scrollbar { display: none; }
+
+    .gallery-item {
+      flex: 0 0 175px;
+      height: 240px;
+      border-radius: 10px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      background: var(--gold-l);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ══ LOCATION ══ */
+    .location-section {
+      background: var(--white);
+      padding: 68px 28px;
+    }
+
+    .location-section .tag { margin-bottom: 28px; }
+
+    .venue-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--dark);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .venue-detail {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.9;
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .map-box {
+      width: 100%;
+      height: 200px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--line);
+      margin-bottom: 14px;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    .map-placeholder svg {
+      width: 28px;
+      height: 28px;
+      opacity: 0.4;
+    }
+
+    .map-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 0;
+    }
+
+    .map-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 13px;
+      border-radius: 10px;
+      border: 1px solid var(--light);
+      background: var(--white);
+      color: var(--dark);
+      font-size: 12px;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+
+    .map-btn:hover { background: var(--bg); }
+
+    /* ══ FOOTER ══ */
+    footer {
+      background: var(--bg);
+      color: var(--gray);
+      text-align: center;
+      padding: 52px 28px;
+      font-size: 11.5px;
+      line-height: 2;
+      letter-spacing: 0.08em;
+    }
+
+    footer .f-names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--gray);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    /* ══ REVEAL ══ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-date-top">
+    <p class="hero-date-nums">
+      26<span class="pipe">|</span>05<span class="pipe">|</span>01
+    </p>
+    <p class="hero-day">Friday</p>
+  </div>
+
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="sources/FV100784.png" alt="이동근 & 권영서" />
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-names">
+      이동근<span class="pipe">|</span>권영서
+    </p>
+    <p class="hero-meta">
+      2026년 5월 1일 금요일 오후 12시<br/>
+      JW 메리어트 호텔 서울 7층 더마고그릴 온실룸
+    </p>
+  </div>
+</div>
+
+<!-- ── GREETING ── -->
+<section class="greeting reveal">
+  <span class="tag">Invitation</span>
+  <div class="h-rule" style="margin: 20px auto 32px;"></div>
+  <p class="greeting-text">
+    풋풋했던 캠퍼스의 인연이<br/>
+    이제 부부로서 첫걸음을 내딛으려 합니다<br/>
+    <br/>
+    따뜻한 5월이 시작되는 날<br/>
+    저희의 새로운 출발에, 소중한 분을 모십니다
+  </p>
+</section>
+
+<!-- ── FAMILY ── -->
+<div class="family reveal">
+  <span class="tag">Family</span>
+  <div class="h-rule" style="margin: 20px auto 32px;"></div>
+  <div class="family-inner">
+    <div class="fam-side">
+      <p class="fam-parents">이기수 · 채미향</p>
+      <p class="fam-role">차남</p>
+      <p class="fam-name">이동근</p>
+    </div>
+    <div class="fam-vline"></div>
+    <div class="fam-side">
+      <p class="fam-parents">권일호 · 양성미</p>
+      <p class="fam-role">장녀</p>
+      <p class="fam-name">권영서</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── DATE ── -->
+<section class="date-section reveal">
+  <span class="tag">Date &amp; Time</span>
+  <div class="h-rule" style="margin: 20px auto 28px;"></div>
+  <p class="date-big">05.01</p>
+  <p class="date-sub">2026년 5월 1일 금요일 · 오후 12시</p>
+
+  <div class="cal-wrap">
+    <p class="cal-month">MAY 2026</p>
+    <div class="cal-dow">
+      <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
+
+  <div class="countdown">
+    <div class="cd-item"><p class="cd-num" id="cd-d">--</p><p class="cd-unit">DAYS</p></div>
+    <div class="cd-item"><p class="cd-num" id="cd-h">--</p><p class="cd-unit">HRS</p></div>
+    <div class="cd-item"><p class="cd-num" id="cd-m">--</p><p class="cd-unit">MIN</p></div>
+    <div class="cd-item"><p class="cd-num" id="cd-s">--</p><p class="cd-unit">SEC</p></div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section class="gallery-section reveal">
+  <div class="gallery-header">
+    <span class="tag">Gallery</span>
+    <div class="h-rule" style="margin: 18px auto 0;"></div>
+  </div>
+  <div class="gallery-scroll">
+    <div class="gallery-item"><img src="sources/FV100784.jpg" alt="사진 1" /></div>
+    <div class="gallery-item"><img src="sources/FV102620.jpg" alt="사진 2" /></div>
+    <div class="gallery-item"><img src="sources/FV201094.jpg" alt="사진 3" /></div>
+    <div class="gallery-item"><img src="sources/FV201511.jpg" alt="사진 4" /></div>
+    <div class="gallery-item"><img src="sources/FV202013.jpg" alt="사진 5" /></div>
+    <div class="gallery-item"><img src="sources/FV202131.jpg" alt="사진 6" /></div>
+  </div>
+</section>
+
+<!-- ── LOCATION ── -->
+<section class="location-section reveal">
+  <span class="tag">Location</span>
+  <div class="h-rule" style="margin: 20px auto 28px;"></div>
+  <p class="venue-name">JW 메리어트 호텔 서울</p>
+  <p class="venue-detail">
+    7층 더마고그릴 온실룸<br/>
+    서울 서초구 신반포로 176<br/>
+    <span style="font-size:11px;">(예약자 이름 '권영서'로 입장하시면 됩니다)</span>
+  </p>
+
+  <div class="map-box">
+    <!-- 실제 배포 시 Google Maps 또는 카카오맵 iframe으로 교체하세요 -->
+    <div class="map-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      지도 영역
+    </div>
+  </div>
+
+  <div class="map-btns">
+    <a href="#" class="map-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B8966A" stroke-width="2">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      네이버지도
+    </a>
+    <a href="#" class="map-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B8966A" stroke-width="2">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      카카오맵
+    </a>
+  </div>
+
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="f-names">DongGeun &amp; YoungSeo</p>
+  <p>2026 · 05 · 01 &nbsp;·&nbsp; FRIDAY</p>
+</footer>
+
+<script>
+  /* ── CALENDAR (May 2026 · 1일 = 금요일 = index 5) ── */
+  (function () {
+    const grid = document.getElementById('calGrid');
+    const startDay = 5;
+    const totalDays = 31;
+    const wedding = 1;
+
+    for (let i = 0; i < startDay; i++) {
+      const el = document.createElement('div');
+      el.className = 'd e';
+      el.textContent = '0';
+      grid.appendChild(el);
+    }
+
+    for (let d = 1; d <= totalDays; d++) {
+      const dow = (startDay + d - 1) % 7;
+      const el = document.createElement('div');
+      let cls = 'd';
+      if (d === wedding)  cls += ' w';
+      else if (dow === 0) cls += ' su';
+      else if (dow === 6) cls += ' sa';
+      el.className = cls;
+      el.textContent = d;
+      grid.appendChild(el);
+    }
+  })();
+
+  /* ── COUNTDOWN ── */
+  function tick() {
+    const target = new Date('2026-05-01T12:00:00+09:00').getTime();
+    const diff = target - Date.now();
+
+    if (diff <= 0) {
+      ['d','h','m','s'].forEach(u => document.getElementById('cd-'+u).textContent = '00');
+      return;
+    }
+
+    document.getElementById('cd-d').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+  }
+
+  tick();
+  setInterval(tick, 1000);
+
+  /* ── SCROLL REVEAL ── */
+  const io = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+
+</script>
+</body>
+</html>
